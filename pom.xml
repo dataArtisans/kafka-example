@@ -17,9 +17,9 @@ specific language governing permissions and limitations
 under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>com.dataartisans</groupId>
 	<artifactId>kafka-example</artifactId>
 	<version>1.0-SNAPSHOT</version>
@@ -45,7 +45,7 @@ under the License.
 			</snapshots>
 		</repository>
 	</repositories>
-	
+
 	<!-- 
 		
 		Execute "mvn clean package -Pbuild-jar"
@@ -74,22 +74,27 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-java</artifactId>
-			<version>0.9.1</version>
+			<version>1.11.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-streaming-core</artifactId>
-			<version>0.9.1</version>
+			<artifactId>flink-streaming-java_2.12</artifactId>
+			<version>1.11.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-clients</artifactId>
-			<version>0.9.1</version>
+			<artifactId>flink-core</artifactId>
+			<version>1.11.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-connector-kafka</artifactId>
-			<version>0.9.1</version>
+			<artifactId>flink-clients_2.12</artifactId>
+			<version>1.11.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-connector-kafka_2.12</artifactId>
+			<version>1.11.2</version>
 		</dependency>
 	</dependencies>
 
@@ -216,7 +221,7 @@ under the License.
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<!-- Configure the jar plugin to add the main class as a manifest entry -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -241,8 +246,8 @@ under the License.
 				</configuration>
 			</plugin>
 		</plugins>
-		
-			
+
+
 		<!-- If you want to use Java 8 Lambda Expressions uncomment the following lines -->
 		<!--
 		<pluginManagement>
@@ -262,7 +267,7 @@ under the License.
 						</dependency>
 					</dependencies>
 				</plugin>
-		
+
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -304,7 +309,7 @@ under the License.
 			</plugins>
 		</pluginManagement>
 		-->
-		
+
 	</build>
 	<profiles>
 		<profile>
@@ -318,19 +323,19 @@ under the License.
 				<dependency>
 					<groupId>org.apache.flink</groupId>
 					<artifactId>flink-java</artifactId>
-					<version>0.9.0</version>
+					<version>1.11.2</version>
 					<scope>provided</scope>
 				</dependency>
 				<dependency>
 					<groupId>org.apache.flink</groupId>
-					<artifactId>flink-streaming-core</artifactId>
-					<version>0.9.0</version>
+					<artifactId>flink-core</artifactId>
+					<version>1.11.2</version>
 					<scope>provided</scope>
 				</dependency>
 				<dependency>
 					<groupId>org.apache.flink</groupId>
-					<artifactId>flink-clients</artifactId>
-					<version>0.9.0</version>
+					<artifactId>flink-clients_2.12</artifactId>
+					<version>1.11.2</version>
 					<scope>provided</scope>
 				</dependency>
 			</dependencies>
